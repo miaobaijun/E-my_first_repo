@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>简历生成器</title>
+    <style>
+        body { font-family: Arial; max-width: 800px; margin: 0 auto; }
+        .resume { border: 2px solid #333; padding: 20px; }
+    </style>
+</head>
+<body>
+    <div class="resume">
+        <h1 id="name">你的名字</h1>
+        <p id="email">example@email.com</p>
+        <hr>
+        <h2>技能</h2>
+        <ul id="skills">
+            <!-- JS会动态添加内容 -->
+        </ul>
+    </div>
+
+    <script>
+        // 用户数据示例
+        const userData = {
+            name: "张三",
+            email: "zhangsan@resume.com",
+            skills: ["HTML", "CSS", "JavaScript"]
+        };
+
+        // 填充数据到页面
+        document.getElementById('name').textContent = userData.name;
+        document.getElementById('email').textContent = userData.email;
+        const skillsList = document.getElementById('skills');
+        userData.skills.forEach(skill => {
+            const li = document.createElement('li');
+            li.textContent = skill;
+            skillsList.appendChild(li);
+        });
+    </script>
+</body>
+</html>
