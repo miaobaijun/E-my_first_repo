@@ -1,0 +1,10 @@
+# 忽略目录
+node_modules/
+dist/
+
+# 忽略文件
+*.log
+.env
+
+# 其他需要忽略的路径
+resume-generator/
